@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AstroArcade Mini - Retro Power in a Modern Shell</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+    body {
+      background: #000000;
+      color: #d1d5db;
+      font-family: 'Orbitron', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    canvas#grid-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle at center, #020202, #000000);
+    }
+
+    .metal-text {
+      background: linear-gradient(90deg, #8acfff, #b58bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .feature-box {
+      background: rgba(15, 15, 25, 0.9);
+      border: 1px solid rgba(120, 120, 255, 0.2);
+      box-shadow: 0 0 20px rgba(120, 120, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="grid-bg"></canvas>
+
+  <header class="text-center py-12">
+    <img src="Sides4Website.png" alt="AstroArcade Logo" class="mx-auto w-40 mb-6">
+    <h1 class="text-6xl font-bold metal-text">AstroArcade Mini</h1>
+    <p class="text-xl text-gray-400 mt-3">Handcrafted 3D-printed desktop arcades — where nostalgia meets modern engineering.</p>
+  </header>
+
+  <section class="max-w-6xl mx-auto text-center py-12">
+    <h2 class="text-3xl font-semibold metal-text mb-8">The Lineup</h2>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="feature-box rounded-2xl p-6">
+        <img src="astroarcade-mini.png" alt="AstroArcade Mini Mockup" class="mx-auto rounded-xl mb-4 shadow-lg">
+        <h3 class="text-2xl mb-2 metal-text">AstroArcade Mini</h3>
+        <p class="text-gray-300">A compact, single-player retro gaming experience featuring a 9.7" display, Happ-style joystick, 6 main action buttons, and 2 side buttons. Built around a Raspberry Pi 4, with full Recalbox integration for over 99 classic systems.</p>
+        <ul class="text-left mt-4 text-gray-400 list-disc list-inside">
+          <li>10W stereo sound with volume control</li>
+          <li>Optional 2.8" marquee display</li>
+          <li>Rear SD card slot + USB port for external controllers</li>
+          <li>Software-controlled power switch</li>
+          <li>Dimensions ideal for desks or tabletops</li>
+        </ul>
+        <p class="text-lg font-semibold mt-4">£250 + P&P</p>
+        <a href="#buy" class="mt-4 inline-block bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-full transition">Buy Now</a>
+      </div>
+
+      <div class="feature-box rounded-2xl p-6">
+        <img src="/mockups/astroarcade-duo.png" alt="AstroArcade DUO Mockup" class="mx-auto rounded-xl mb-4 shadow-lg">
+        <h3 class="text-2xl mb-2 metal-text">AstroArcade DUO</h3>
+        <p class="text-gray-300">Designed for shared play, the AstroArcade DUO features two full control sets, the same vibrant 9.7" display, and expanded enclosure for smooth, competitive sessions. Experience true arcade action in miniature form.</p>
+        <ul class="text-left mt-4 text-gray-400 list-disc list-inside">
+          <li>Dual 8-way joysticks & 12 action buttons</li>
+          <li>10W stereo sound system</li>
+          <li>Same 99+ systems through Recalbox</li>
+          <li>Fully assembled, plug-and-play</li>
+        </ul>
+        <p class="text-lg font-semibold mt-4">£350 + P&P</p>
+        <a href="#buy" class="mt-4 inline-block bg-purple-600 hover:bg-purple-500 text-white px-6 py-2 rounded-full transition">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto text-center py-12">
+    <h2 class="text-3xl font-semibold metal-text mb-6">Powered by Recalbox</h2>
+    <p class="text-gray-300 mb-6">Recalbox transforms your AstroArcade into the ultimate retro console hub. Enjoy 99+ supported systems, from classic arcades to beloved home consoles. Save states, apply visual shaders, connect Bluetooth controllers, and access the built-in RetroArch menu for deep customization.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Recalbox_logo.png" alt="Recalbox Logo" class="mx-auto w-48 mb-4">
+  </section>
+
+  <section id="buy" class="text-center py-16 bg-black bg-opacity-90">
+    <h2 class="text-3xl font-semibold metal-text mb-6">Order Yours Today</h2>
+    <p class="text-gray-400 mb-4 max-w-3xl mx-auto">Every AstroArcade is made-to-order, 3D-printed and assembled with precision. Please allow a 2–4 week lead time for delivery. All systems include a 12-month limited warranty and full email support. Custom colour variations available upon request.</p>
+    <a href="https://yourshopifylink.com" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-10 py-3 rounded-full text-lg transition">Purchase via Shopify</a>
+  </section>
+
+  <footer class="text-center py-6 text-gray-500 text-sm">
+    <p>© 2025 AstroArcade. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@astroarcade.com" class="underline text-blue-400">info@astroarcade.com</a></p>
+  </footer>
+
+  <script>
+    // Interactive glowing grid background
+    const canvas = document.getElementById('grid-bg');
+    const ctx = canvas.getContext('2d');
+
+    let w, h, mouseX = 0, mouseY = 0;
+
+    function resizeCanvas() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('mousemove', e => {
+      mouseX = e.clientX / w - 0.5;
+      mouseY = e.clientY / h - 0.5;
+    });
+
+    resizeCanvas();
+
+    function drawGrid() {
+      ctx.clearRect(0, 0, w, h);
+      const gridSize = 40;
+      const offsetX = mouseX * 30;
+      const offsetY = mouseY * 30;
+
+      ctx.strokeStyle = 'rgba(100, 0, 255, 0.2)';
+      ctx.lineWidth = 1;
+
+      for (let x = -gridSize; x < w + gridSize; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x + offsetX, 0);
+        ctx.lineTo(x + offsetX, h);
+        ctx.stroke();
+      }
+
+      for (let y = -gridSize; y < h + gridSize; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y + offsetY);
+        ctx.lineTo(w, y + offsetY);
+        ctx.stroke();
+      }
+
+      // glow effect overlay
+      const gradient = ctx.createRadialGradient(w/2, h/2, 0, w/2, h/2, w/1.5);
+      gradient.addColorStop(0, 'rgba(100, 0, 255, 0.05)');
+      gradient.addColorStop(1, 'rgba(0, 0, 0, 0.9)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, w, h);
+
+      requestAnimationFrame(drawGrid);
+    }
+
+    drawGrid();
+  </script>
+</body>
+</html>
